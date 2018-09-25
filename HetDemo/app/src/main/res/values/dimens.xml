@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="alarm_bigStroke_width">30dp</dimen>
+    <dimen name="clock_time_textsize_big">27sp</dimen>
+    <dimen name="clock_graduation_textsize">10sp</dimen>
+    <dimen name="clock_time_textsize_small">16sp</dimen>
+</resources>

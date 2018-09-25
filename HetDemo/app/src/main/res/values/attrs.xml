@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AlarmClock_style">
+        <!--闹钟大圆外面描边的颜色-->
+        <attr name="bigStroke_color" format="reference|color" />
+        <!--闹钟大圆外面描边的大小-->
+        <attr name="bigStroke_width" format="reference|dimension" />
+        <!--闹钟小圆的填充颜色，-->
+        <attr name="smallCircle_color" format="reference|color" />
+        <!--大刻度的颜色-->
+        <attr name="bigGraduation_colro" format="reference|color" />
+        <!--小刻度的颜色-->
+        <attr name="smallGraduation_colro" format="reference|color" />
+        <!--时钟刻度数字的颜色-->
+        <attr name="textGraduation_colro" format="reference|color" />
+        <!--显示开始到结束的距离时长的字符颜色-->
+        <attr name="textTime_colro" format="reference|color" />
+        <!--显示开始到结束的弧长颜色,渐变处理,一定要传颜色数组-->
+        <attr name="arc_colro" format="reference" />
+        <!--刻度描边大小-->
+        <attr name="graduation_width" format="reference|dimension" />
+        <!--刻度字体大小-->
+        <attr name="graduation_textsize" format="reference|dimension" />
+        <!--时间描边大小-->
+        <attr name="time_width" format="reference|dimension" />
+        <!--时间描边大小-->
+        <attr name="bigtime_width" format="reference|dimension" />
+        <!--时间字体大小-->
+        <attr name="time_textsize" format="reference|dimension" />
+        <!--时间字体大小-->
+        <attr name="bigtime_textsize" format="reference|dimension" />
+        <!--开始时间-->
+        <attr name="starttime" format="float" />
+        <!--结束时间-->
+        <attr name="endtime" format="float" />
+        <!--开始图标,只支持图片-->
+        <attr name="starttime_drawable" format="reference" />
+        <!--结束图标,只支持图片-->
+        <attr name="endtime_drawable" format="reference" />
+        <!--闹钟开关状态-->
+        <attr name="open" format="boolean" />
+    </declare-styleable>
+
+</resources>

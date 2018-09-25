@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--问卷答案选项背景颜色-->
+    <color name="color_answer_item_checked">#FF0dc9ab</color>
+    <color name="color_answer_item_normal">#FFFFFFFF</color>
+    <color name="color_answer_item_normal_stroke">#FFb0b0b0</color>
+
+    <!--闹钟颜色-->
+    <array name="alarmclock_arcColors">
+        <item>#05eaff</item>
+        <item>#f7ef96</item>
+        <item>#f7ef96</item>
+        <item>#05eaff</item>
+    </array>
+
+    <color name="alarmclock_bigStroke_color">#17000000</color>
+</resources>

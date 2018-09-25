@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_hello"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Hello World!"
+        android:onClick="doClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Hello JC!"
+        android:onClick="doClick"
+        android:layout_marginTop="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_hello" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.junkchen.hetdemo.widget.AlarmClockView
+            android:id="@+id/alarmClock"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_centerInParent="true"
+            app:bigStroke_color="@color/alarmclock_bigStroke_color"
+            app:bigStroke_width="@dimen/alarm_bigStroke_width"
+            app:bigtime_textsize="@dimen/clock_time_textsize_big"
+            app:endtime_drawable="@drawable/icon_wakeup2"
+            app:graduation_textsize="@dimen/clock_graduation_textsize"
+            app:smallCircle_color="#88ffffff"
+            app:starttime="21.5"
+            app:starttime_drawable="@drawable/icon_sleep"
+            app:time_textsize="@dimen/clock_time_textsize_small" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
