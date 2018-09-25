@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.junkchen.propertyanimation.CircleIndicatorActivity">
+
+    <com.junkchen.propertyanimation.CircleIndicatorView
+        android:id="@+id/circleIndicator"
+        android:layout_width="500dp"
+        android:onClick="startAnimation"
+        android:layout_centerInParent="true"
+        android:layout_height="500dp" />
+
+    <com.junkchen.propertyanimation.PercentProgressBar
+        android:id="@+id/percentBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+</RelativeLayout>

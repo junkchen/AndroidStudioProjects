@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LKDemo.iml" filepath="$PROJECT_DIR$/LKDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/accessibilitydemo/accessibilitydemo.iml" filepath="$PROJECT_DIR$/accessibilitydemo/accessibilitydemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alilivedemo/alilivedemo.iml" filepath="$PROJECT_DIR$/alilivedemo/alilivedemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/autocloseapp/autocloseapp.iml" filepath="$PROJECT_DIR$/autocloseapp/autocloseapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bluetoothdemo/bluetoothdemo.iml" filepath="$PROJECT_DIR$/bluetoothdemo/bluetoothdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cardviewdemo/cardviewdemo.iml" filepath="$PROJECT_DIR$/cardviewdemo/cardviewdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/colordebug/colordebug.iml" filepath="$PROJECT_DIR$/colordebug/colordebug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/complexrecyclerview/complexrecyclerview.iml" filepath="$PROJECT_DIR$/complexrecyclerview/complexrecyclerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customcamera/customcamera.iml" filepath="$PROJECT_DIR$/customcamera/customcamera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customchart/customchart.iml" filepath="$PROJECT_DIR$/customchart/customchart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customkeyboard/customkeyboard.iml" filepath="$PROJECT_DIR$/customkeyboard/customkeyboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dialogdemo/dialogdemo.iml" filepath="$PROJECT_DIR$/dialogdemo/dialogdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/globalexceptionhandle/globalexceptionhandle.iml" filepath="$PROJECT_DIR$/globalexceptionhandle/globalexceptionhandle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hidebuttonclick/hidebuttonclick.iml" filepath="$PROJECT_DIR$/hidebuttonclick/hidebuttonclick.iml" />
+      <module fileurl="file://$PROJECT_DIR$/networkinfo/networkinfo.iml" filepath="$PROJECT_DIR$/networkinfo/networkinfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/progressbartest/progressbartest.iml" filepath="$PROJECT_DIR$/progressbartest/progressbartest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/propertyanimation/propertyanimation.iml" filepath="$PROJECT_DIR$/propertyanimation/propertyanimation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sockettest/sockettest.iml" filepath="$PROJECT_DIR$/sockettest/sockettest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tencentlivedemo/tencentlivedemo.iml" filepath="$PROJECT_DIR$/tencentlivedemo/tencentlivedemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/threadpooldemo/threadpooldemo.iml" filepath="$PROJECT_DIR$/threadpooldemo/threadpooldemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/timepickerdemo/timepickerdemo.iml" filepath="$PROJECT_DIR$/timepickerdemo/timepickerdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/usbdemo/usbdemo.iml" filepath="$PROJECT_DIR$/usbdemo/usbdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/versionupdate/versionupdate.iml" filepath="$PROJECT_DIR$/versionupdate/versionupdate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewstubdemo/viewstubdemo.iml" filepath="$PROJECT_DIR$/viewstubdemo/viewstubdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wxlogin/wxlogin.iml" filepath="$PROJECT_DIR$/wxlogin/wxlogin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xfspeech/xfspeech.iml" filepath="$PROJECT_DIR$/xfspeech/xfspeech.iml" />
+    </modules>
+  </component>
+</project>

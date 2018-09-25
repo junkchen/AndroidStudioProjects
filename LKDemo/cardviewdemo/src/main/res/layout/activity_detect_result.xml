@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Title-->
+    <TextView
+        android:id="@+id/txtv_title"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:gravity="center"
+        android:text="心率血压检测报告" />
+
+    <RadioGroup
+        android:id="@+id/rg_heart_blood"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_below="@+id/txtv_title"
+        android:elevation="2dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rdoBtn_blood"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:text="我的血压"
+            android:textSize="46sp" />
+
+        <!--<ImageView
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="1dp"
+            android:background="#DFDFDF" />-->
+
+        <RadioButton
+            android:id="@+id/rdoBtn_heart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="我的心率"
+            android:textSize="46sp" />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imgv_rg_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/rg_heart_blood"
+        android:background="#DFDFDF" />
+
+    <ImageView
+        android:id="@+id/imgv_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/img_mask"
+        android:visibility="gone" />
+
+</RelativeLayout>

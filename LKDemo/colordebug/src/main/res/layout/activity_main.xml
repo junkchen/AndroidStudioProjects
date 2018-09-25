@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.junkchen.colordebug.MainActivity">
+
+    <Button
+        android:id="@+id/btn_set"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Set All"
+        android:textSize="@dimen/text_size" />
+
+    <EditText
+        android:id="@+id/edt_color1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="请输入颜色值，如 FF0000 或 AAFF0000"
+        android:inputType="textCapCharacters"
+        android:maxLength="8"
+        android:paddingLeft="16dp"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size" />
+
+    <EditText
+        android:id="@+id/edt_color2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="请输入颜色值，如FF0000"
+        android:inputType="textCapCharacters"
+        android:maxLength="8"
+        android:paddingLeft="16dp"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size" />
+
+    <EditText
+        android:id="@+id/edt_color3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="请输入颜色值，如FF0000"
+        android:inputType="textCapCharacters"
+        android:maxLength="8"
+        android:paddingLeft="16dp"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size" />
+
+    <EditText
+        android:id="@+id/edt_color4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="请输入颜色值，如FF0000"
+        android:inputType="textCapCharacters"
+        android:maxLength="8"
+        android:paddingLeft="16dp"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size" />
+
+    <EditText
+        android:id="@+id/edt_color5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="请输入颜色值，如FF0000"
+        android:inputType="textCapCharacters"
+        android:maxLength="8"
+        android:paddingLeft="16dp"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size" />
+
+</LinearLayout>

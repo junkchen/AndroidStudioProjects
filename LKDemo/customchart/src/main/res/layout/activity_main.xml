@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.junkchen.customchart.MainActivity">
+
+    <com.junkchen.customchart.LineChart
+        android:id="@+id/lineChart"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="600dp" />
+
+    <Button
+        android:onClick="changeData"
+        android:text="Change Data"
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp" />
+
+    <com.junkchen.customchart.LinesChart
+        android:id="@+id/multipleLineChart"
+
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="600dp" />
+
+    <!--android:background="#22886699"-->
+</LinearLayout>

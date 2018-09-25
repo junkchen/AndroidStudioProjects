@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.junkchen.propertyanimation.MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="doAnimation"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/flower" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="96dp">
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/btn_globule"
+            android:layout_weight="1"
+            android:text="玩小球"
+            android:textSize="30sp"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/btn_motion"
+            android:layout_weight="1"
+            android:text="小动画"
+            android:textSize="30sp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</RelativeLayout>

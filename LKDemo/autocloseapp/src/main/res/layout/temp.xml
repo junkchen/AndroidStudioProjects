@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_records_overview_server">
+
+        <RelativeLayout
+            android:id="@+id/record_overview_server_profile_container"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_records_overview_profile">
+
+            <TextView
+                android:id="@+id/rver_pass_rate_text"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="78%" />
+
+            <TextView
+                android:layout_alignTop="@id/rver_pass_rate_text"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/rver_pass_rate_text"
+                android:text="合格率" />
+
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rver_pass_rate_text"
+                android:text="共检测16次" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

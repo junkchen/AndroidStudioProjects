@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/ic_favorite_black_48dp"
+        android:title="action favorite"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_youtube_searched_for_black_48dp"
+        android:title="action search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+    <item
+        android:id="@+id/action_setting"
+        android:title="setting"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_share"
+        android:title="share"
+        app:showAsAction="ifRoom"
+        app:actionProviderClass="android.support.v7.widget.ShareActionProvider"/>
+
+    <item
+        android:id="@+id/action_about"
+        android:title="about"
+        app:showAsAction="never" />
+
+</menu>

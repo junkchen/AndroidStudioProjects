@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.junkchen.customkeyboard.keyboard2.CustomKeyboardView
+        android:id="@+id/keyboard_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="#FFFFFF"
+        android:keyBackground="@drawable/bg_custom_key_gray"
+        android:labelTextSize="28sp"
+        android:keyTextColor="@color/text_color_gray_3"
+        android:keyTextSize="36sp" />
+
+    <EditText
+        android:id="@+id/edt_focus_scavenger"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+</FrameLayout>

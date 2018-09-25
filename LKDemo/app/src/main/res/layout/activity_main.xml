@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.example.junk.myapplication.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="px to dp" />
+
+    <EditText
+        android:id="@+id/edt_px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layerType="software"
+        android:onClick="convert"
+        android:shadowColor="#FF0000"
+        android:letterSpacing="0.5"
+        android:shadowDx="10"
+        android:text="转换" />
+
+    <NumberPicker
+        android:id="@+id/numberPicker"
+        android:dividerPadding="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"></NumberPicker>
+
+    <com.example.junk.myapplication.CustomNumberPicker
+        android:id="@+id/customNumberPicker"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></com.example.junk.myapplication.CustomNumberPicker>
+
+    <!--<com.example.junk.myapplication.NumberPickerView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--app:npv_MinValue="1"-->
+        <!--app:npv_MaxValue="12"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <TextView
+        android:id="@+id/txtv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.junk.myapplication.CircleShadowView
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></DatePicker>
+
+
+</LinearLayout>

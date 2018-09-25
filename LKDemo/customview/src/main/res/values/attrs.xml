@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ThreeSectionView">
+        <attr name="indicatorColor" format="color|reference" />
+
+        <attr name="leftSectionColor" format="color|reference" />
+        <attr name="centerSectionColor" format="color|reference" />
+        <attr name="rightSectionColor" format="color|reference" />
+
+        <attr name="leftTextColor" format="color|reference" />
+        <attr name="centerTextColor" format="color|reference" />
+        <attr name="rightTextColor" format="color|reference" />
+
+        <attr name="leftText" format="string|reference" />
+        <attr name="centerText" format="string|reference" />
+        <attr name="rightText" format="string|reference" />
+
+        <attr name="textColor" format="color|reference" />
+        <attr name="textSize" format="dimension|reference" />
+
+        <attr name="indicatorLocation" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.junkchen.customkeyboard.MainActivity">
+
+    <EditText
+        android:id="@+id/edt_number"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:hint="数字" />
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="100dp"
+        android:layout_height="96dp"
+        android:hint="name" />
+
+    <EditText
+        android:id="@+id/edt_temp"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+
+        android:layout_alignParentBottom="true"
+        android:hint="temp" />
+
+    <com.junkchen.customkeyboard.keydialog.LPTextField
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="自定义数字键盘输入"
+        android:layout_below="@id/edt_number"
+        android:inputType="number"
+        android:textSize="24sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.inputmethodservice.KeyboardView
+            android:id="@+id/keyboardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#9E9E9E"
+            android:keyBackground="@drawable/key_background_selector"
+            android:keyPreviewHeight="96dp"
+            android:keyPreviewLayout="@layout/key_preview_layout"
+            android:keyPreviewOffset="-32dp"
+            android:keyTextColor="#EEEEEE"
+            android:keyTextSize="48sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

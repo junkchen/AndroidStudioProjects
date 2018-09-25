@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.junkchen.timepickerdemo.MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:onClick="showTimePicker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.junkchen.timepickerdemo.PickerView
+        android:id="@+id/mPickerView"
+        android:layout_width="150dp"
+        android:layout_height="300dp" />
+
+    <com.junkchen.timepickerdemo.WheelView
+        android:id="@+id/mWheelView"
+        app:itemNumber="3"
+        app:lineColor="#6FB048"
+        app:lineHeight="4dp"
+        app:selectedTextSize="48sp"
+        app:normalTextSize="48sp"
+        app:unitHeight="128dp"
+        app:maskHeight="48dp"
+        app:selectedTextColor="#373737"
+        app:normalTextColor="#BCBCBC"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content" />
+
+    <com.bigkoo.pickerview.lib.WheelView
+        android:id="@+id/mWheelView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
