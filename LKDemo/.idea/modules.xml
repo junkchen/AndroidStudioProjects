@@ -19,6 +19,7 @@
       <module fileurl="file://$PROJECT_DIR$/globalexceptionhandle/globalexceptionhandle.iml" filepath="$PROJECT_DIR$/globalexceptionhandle/globalexceptionhandle.iml" />
       <module fileurl="file://$PROJECT_DIR$/hidebuttonclick/hidebuttonclick.iml" filepath="$PROJECT_DIR$/hidebuttonclick/hidebuttonclick.iml" />
       <module fileurl="file://$PROJECT_DIR$/networkinfo/networkinfo.iml" filepath="$PROJECT_DIR$/networkinfo/networkinfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/playsound/playsound.iml" filepath="$PROJECT_DIR$/playsound/playsound.iml" />
       <module fileurl="file://$PROJECT_DIR$/progressbartest/progressbartest.iml" filepath="$PROJECT_DIR$/progressbartest/progressbartest.iml" />
       <module fileurl="file://$PROJECT_DIR$/propertyanimation/propertyanimation.iml" filepath="$PROJECT_DIR$/propertyanimation/propertyanimation.iml" />
       <module fileurl="file://$PROJECT_DIR$/sockettest/sockettest.iml" filepath="$PROJECT_DIR$/sockettest/sockettest.iml" />
