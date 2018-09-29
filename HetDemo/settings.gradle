@@ -1,1 +1,1 @@
-include ':app', ':coordinatorlayoutdemo', ':ipdemo', ':dialogdemo'
+include ':app', ':coordinatorlayoutdemo', ':ipdemo', ':dialogdemo', ':chartdemo'
