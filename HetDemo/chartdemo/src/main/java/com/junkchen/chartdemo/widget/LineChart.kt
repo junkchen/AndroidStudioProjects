@@ -11,9 +11,11 @@ import android.view.View
  * 折线图
  * Create by Junk Chen on 2018/9/29.
  */
-class LineChart(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(
+class LineChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : View(
         context, attrs, defStyleAttr
 ) {
+    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
+    constructor(context: Context) : this(context, null)
 
     private val linePaint = Paint()
     private val axisPaint = Paint()
