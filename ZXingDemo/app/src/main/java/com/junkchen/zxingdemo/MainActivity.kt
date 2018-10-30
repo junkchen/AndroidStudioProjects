@@ -13,9 +13,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val integrator = IntentIntegrator(this)
-        integrator.setOrientationLocked(false)
+        integrator.setOrientationLocked(false).initiateScan()
 
         btn_scan_qrcode.setOnClickListener {
+//            integrator.initiateScan()
+//            startActivity(Intent(this, CustomCaptureActivity::class.java))
+            integrator.captureActivity = CustomCaptureActivity::class.java
             integrator.initiateScan()
         }
     }
