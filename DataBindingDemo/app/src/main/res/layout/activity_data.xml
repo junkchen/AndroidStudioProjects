@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:onClick="@{(view) -> presenter.doClick(view, user)}"
             android:text="button"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_lastName" />
     </android.support.constraint.ConstraintLayout>
 </layout>
