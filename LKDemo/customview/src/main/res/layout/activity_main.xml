@@ -1,108 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="com.junkchen.customview.MainActivity">
 
-    <com.junkchen.customview.widget.SectionView
-        android:id="@+id/sectionView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <ProgressBar
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
-
-    <com.junkchen.customview.widget.SuperscriptView
-        android:layout_width="200dp"
-        android:layout_height="200dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-        <com.junkchen.customview.widget.SuperscriptTextView
-            android:id="@+id/txtv_temperature"
-            android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <com.junkchen.customview.widget.SectionView
+            android:id="@+id/sectionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <com.junkchen.customview.widget.SuperscriptView
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <com.junkchen.customview.widget.SuperscriptTextView
+                android:id="@+id/txtv_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:drawableTop="@drawable/ic_temperature_rect"
+                android:gravity="center_horizontal"
+                android:text="体温"
+                android:textSize="56sp" />
+            <com.junkchen.customview.widget.SuperscriptTextView
+                android:id="@+id/txtv_temperature2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:drawableTop="@drawable/ic_body_fat_rect"
+                android:gravity="center_horizontal"
+                android:text="体脂"
+                android:textSize="56sp" />
+            <com.junkchen.customview.widget.SuperscriptTextView
+                android:id="@+id/txtv_temperature3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:drawableTop="@drawable/ic_oxygen_rect"
+                android:gravity="center_horizontal"
+                android:text="血氧"
+                android:textSize="56sp" />
+        </LinearLayout>
+
+        <com.junkchen.customview.widget.FlowLayout
+            android:id="@+id/flowLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:drawableTop="@drawable/ic_temperature_rect"
-            android:gravity="center_horizontal"
-            android:text="体温"
-            android:textSize="56sp" />
-         <com.junkchen.customview.widget.SuperscriptTextView
-            android:id="@+id/txtv_temperature2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:drawableTop="@drawable/ic_body_fat_rect"
-            android:gravity="center_horizontal"
-            android:text="体脂"
-            android:textSize="56sp" />
-         <com.junkchen.customview.widget.SuperscriptTextView
-            android:id="@+id/txtv_temperature3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:drawableTop="@drawable/ic_oxygen_rect"
-            android:gravity="center_horizontal"
-            android:text="血氧"
-            android:textSize="56sp" />
+            android:layout_below="@id/sectionView"
+            android:background="#AA993366">
+
+            <TextView
+                style="@style/ChildViewStyle"
+                android:text="1Hello" />
+
+            <TextView
+                style="@style/ChildViewStyle"
+                android:text="2Android O" />
+
+            <TextView
+                style="@style/ChildViewStyle"
+                android:text="3Oreo" />
+
+            <TextView
+                style="@style/ChildViewStyle"
+                android:text="4Junk Chen" />
+
+            <TextView
+                style="@style/ChildViewStyle"
+                android:text="512345678797wetgs" />
+
+            <TextView
+                style="@style/ChildViewStyle"
+                android:text="6segn" />
+
+            <TextView
+                style="@style/ChildViewStyle"
+                android:text="7seiorgjeriohjyeiotjhy" />
+
+            <TextView
+                style="@style/ChildViewStyle"
+                android:text="8Hello" />
+
+            <TextView
+                style="@style/ChildViewStyle"
+                android:text="9Hello" />
+
+            <TextView
+                style="@style/ChildViewStyle"
+                android:text="10Hell3545osdfgsdf" />
+
+            <TextView
+                style="@style/ChildViewStyle"
+                android:text="11end" />
+
+        </com.junkchen.customview.widget.FlowLayout>
+
     </LinearLayout>
 
-    <com.junkchen.customview.widget.FlowLayout
-        android:id="@+id/flowLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sectionView"
-        android:background="#AA993366">
-
-        <TextView
-            style="@style/ChildViewStyle"
-            android:text="1Hello" />
-
-        <TextView
-            style="@style/ChildViewStyle"
-            android:text="2Android O" />
-
-        <TextView
-            style="@style/ChildViewStyle"
-            android:text="3Oreo" />
-
-        <TextView
-            style="@style/ChildViewStyle"
-            android:text="4Junk Chen" />
-
-        <TextView
-            style="@style/ChildViewStyle"
-            android:text="512345678797wetgs" />
-
-        <TextView
-            style="@style/ChildViewStyle"
-            android:text="6segn" />
-
-        <TextView
-            style="@style/ChildViewStyle"
-            android:text="7seiorgjeriohjyeiotjhy" />
-
-        <TextView
-            style="@style/ChildViewStyle"
-            android:text="8Hello" />
-
-        <TextView
-            style="@style/ChildViewStyle"
-            android:text="9Hello" />
-
-        <TextView
-            style="@style/ChildViewStyle"
-            android:text="10Hell3545osdfgsdf" />
-
-        <TextView
-            style="@style/ChildViewStyle"
-            android:text="11end" />
-
-    </com.junkchen.customview.widget.FlowLayout>
-
-</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

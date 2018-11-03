@@ -10,11 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by junkchen on 2017/9/3.
+ * Created by Junk Chen on 2017/9/3.
  */
-
 public class FlowLayout extends ViewGroup {
-    public static final String TAG = FlowLayout.class.getSimpleName();
+    public static final String TAG = FlowLayout.class.getCanonicalName();
 
     /**
      * 保存每行 view 的列表
@@ -25,7 +24,6 @@ public class FlowLayout extends ViewGroup {
      * 保存行高的列表
      */
     private List<Integer> mRowHeightList = new ArrayList<>();
-
 
     public FlowLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -39,7 +37,7 @@ public class FlowLayout extends ViewGroup {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        //获取父容器为FlowLayout设置的测量模式和大小
+        // 获取父容器为FlowLayout设置的测量模式和大小
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int widthSpecSize = MeasureSpec.getSize(widthMeasureSpec);
@@ -72,41 +70,41 @@ public class FlowLayout extends ViewGroup {
                         layoutParams.topMargin + layoutParams.bottomMargin;
 
                 if (currentRowWidth + childWidth > widthSpecSize) {
-                    //记录当前行信息
-                    //1、记录当前行的最大宽度，高度累加
+                    // 记录当前行信息
+                    // 1、记录当前行的最大宽度，高度累加
                     measureWidth = Math.max(measureWidth, currentRowWidth);
                     measureHeight += currentRowHeight;
 
-                    //2、将当前行的 viewList 添加到总的 mViewRowList 中，将行高添加到总的行高 list
+                    // 2、将当前行的 viewList 添加到总的 mViewRowList 中，将行高添加到总的行高 list
                     mViewRowList.add(viewList);
                     mRowHeightList.add(currentRowHeight);
 
-                    //记录新一行的信息
-                    //1、重新赋值新一行的宽、高
+                    // 记录新一行的信息
+                    // 1、重新赋值新一行的宽、高
                     currentRowWidth = childWidth;
                     currentRowHeight = childHeight;
 
-                    //2、新建一行的viewList，添加新一行的 view
+                    // 2、新建一行的viewList，添加新一行的 view
                     viewList = new ArrayList<>();
                     viewList.add(childView);
 
                 } else {
-                    //记录某行内的消息
-                    //1、行内宽度的叠加、高度的比较
+                    // 记录某行内的消息
+                    // 1、行内宽度的叠加、高度的比较
                     currentRowWidth += childWidth;
                     currentRowHeight = Math.max(currentRowHeight, childHeight);
 
-                    //2、添加至当前行的 viewList 中
+                    // 2、添加至当前行的 viewList 中
                     viewList.add(childView);
                 }
 
-                //如果正好是最后一行需要换行
-                if(i == childCount - 1) {
-                    //1、记录当前行的最大宽度，高度累加
+                // 如果正好是最后一行需要换行
+                if (i == childCount - 1) {
+                    // 1、记录当前行的最大宽度，高度累加
                     measureWidth = Math.max(measureWidth, currentRowWidth);
                     measureHeight += currentRowHeight;
 
-                    //2、将当前行的 viewList 添加到总的 mViewRowList 中，将行高添加到总的行高 list
+                    // 2、将当前行的 viewList 添加到总的 mViewRowList 中，将行高添加到总的行高 list
                     mViewRowList.add(viewList);
                     mRowHeightList.add(currentRowHeight);
                 }
@@ -119,7 +117,7 @@ public class FlowLayout extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        Log.i(TAG, "onLayout: l = " + l +", t = " + t + ", r = " + r + ", b = " + b);
+        Log.i(TAG, "onLayout: l = " + l + ", t = " + t + ", r = " + r + ", b = " + b);
         int left, top, right, bottom;
         int currentLeft = 0, currentTop = 0;
 
@@ -139,11 +137,12 @@ public class FlowLayout extends ViewGroup {
                 currentLeft += childView.getMeasuredWidth() +
                         layoutParams.leftMargin + layoutParams.rightMargin;
             }
-            currentLeft = 0;//一行摆放完要置0
+            // 一行摆放完要置0
+            currentLeft = 0;
             currentTop += mRowHeightList.get(i);
         }
 
-        //坑，必须清除,测量可能执行多次
+        // 坑，必须清除,测量可能执行多次
         mViewRowList.clear();
         mRowHeightList.clear();
     }
