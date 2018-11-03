@@ -41,4 +41,20 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.junkchen.chartdemo.widget.FlowTextView
+        android:id="@+id/flowTextView"
+        android:layout_width="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="wrap_content"
+        android:background="#F0F0F0"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        app:dividerColor="#000000"
+        app:dividerSize="1dp"
+        app:rowTextHeight="48dp"
+        app:textInterval="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:textSize="18sp" />
+
 </android.support.constraint.ConstraintLayout>

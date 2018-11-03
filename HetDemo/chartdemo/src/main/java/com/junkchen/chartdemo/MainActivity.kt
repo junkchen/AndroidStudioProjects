@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity() {
         dataSet.add(LineData(1110F, (random.nextInt(1000) + 200).toFloat(),
                 "10/10 18:30"))
 //        line_chart.lineDataSet = dataSet
+
+        // FlowTextView
+        flowTextView.textList = arrayListOf("Google", "Kotlin", "Android", "IOS", "Python", "Apple",
+                "Google", "Kotlin", "Android", "IOS", "Python", "Apple", "IOS", "Python", "Apple")
     }
 
 }

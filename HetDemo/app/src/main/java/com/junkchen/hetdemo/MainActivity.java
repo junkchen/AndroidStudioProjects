@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         spannableString.setSpan(new RelativeSizeSpan(1.66F),
                 hoursLen + 2, hoursLen + 2 + minutesLen, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
         tv_hello.setText(spannableString);
+
     }
 
     public void doClick(View view) {
