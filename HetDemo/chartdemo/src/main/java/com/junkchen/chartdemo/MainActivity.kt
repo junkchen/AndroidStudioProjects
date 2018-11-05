@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         // FlowTextView
         flowTextView.textList = arrayListOf("Google", "Kotlin", "Android", "IOS", "Python", "Apple",
                 "Google", "Kotlin", "Android", "IOS", "Python", "Apple", "IOS", "Python", "Apple")
+        flowTextView.rowTextHeight = 96f
     }
 
 }

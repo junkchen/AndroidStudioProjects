@@ -11,6 +11,7 @@ import android.util.AttributeSet
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.View
+import android.view.WindowManager
 import com.junkchen.chartdemo.R
 
 /**
@@ -21,7 +22,7 @@ class FlowTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context) : this(context, null)
 
-    private val TAG = "FlowTextView"
+    private val TAG = FlowTextView::class.qualifiedName
 
     private val textPaint = Paint().apply {
         style = Paint.Style.FILL
@@ -54,7 +55,11 @@ class FlowTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
      * 行文本高度
      */
     @Dimension(unit = Dimension.DP)
-    var rowTextHeight: Float = 48F
+    var rowTextHeight: Float = convertValue2Px(48f)
+        set(value) {
+            field = convertValue2Px(value)
+            postInvalidate()
+        }
 
     /**
      * 两个文本之间的间距
@@ -78,8 +83,8 @@ class FlowTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
                 textColor = getColor(R.styleable.FlowTextView_textColor, Color.BLACK)
                 dividerSize = getDimension(R.styleable.FlowTextView_dividerSize, 1F)
                 dividerColor = getColor(R.styleable.FlowTextView_dividerColor, Color.GRAY)
-                rowTextHeight = getDimension(R.styleable.FlowTextView_rowTextHeight, 48F)
-                textInterval = getDimension(R.styleable.FlowTextView_textInterval, 18F)
+                rowTextHeight = getDimension(R.styleable.FlowTextView_rowTextHeight, convertValue2Px(48F))
+                textInterval = getDimension(R.styleable.FlowTextView_textInterval, 16F)
             } finally {
                 recycle()
             }
@@ -92,13 +97,7 @@ class FlowTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
         dividerPaint.color = dividerColor
     }
 
-    /**
-     * 保存每行要显示的文本
-     */
-    val mRowTextList: List<List<String>> = arrayListOf()
-
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-//        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val widthMode = MeasureSpec.getMode(widthMeasureSpec)
         val heightMode = MeasureSpec.getMode(heightMeasureSpec)
         val widthSize = MeasureSpec.getSize(widthMeasureSpec)
@@ -116,17 +115,22 @@ class FlowTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
 //                0
 //        )
 
-        var hc = 1
-        var tmpWidth = paddingLeft
-        for (text in textList) {
-            val tw = textPaint.measureText(text)
-            if (tmpWidth + tw + paddingRight > widthSize) {
-                hc++
-                tmpWidth = paddingLeft
+        val lineCount = if (textList.isNotEmpty()) {
+            var line = 1
+            var tmpWidth = paddingLeft
+            for (text in textList) {
+                val tw = textPaint.measureText(text)
+                if (tmpWidth + tw + paddingRight > widthSize) {
+                    line++
+                    tmpWidth = paddingLeft
+                }
+                tmpWidth += tw.toInt() + textInterval.toInt()
             }
-            tmpWidth += tw.toInt() + textInterval.toInt()
+            line
+        } else {
+            0
         }
-        setMeasuredDimension(widthSize, height * hc)
+        setMeasuredDimension(widthSize, height * lineCount)
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -146,9 +150,8 @@ class FlowTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
                     drawLine(paddingLeft.toFloat(), currentHeight,
                             width.toFloat(), currentHeight, dividerPaint)
                 }
-
                 val textY = currentHeight + rowTextHeight / 2 + (fm.bottom - fm.top) / 2 - fm.bottom
-                drawText(it, rowTextStartX.toFloat(), textY, textPaint)
+                drawText(it, rowTextStartX, textY, textPaint)
                 rowTextStartX += bounds.width() + textInterval
             }
             drawLine(0F,
@@ -159,9 +162,10 @@ class FlowTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
         }
     }
 
-    private fun convertSp2Px(value: Float): Float {
+    private fun convertValue2Px(value: Float, unit: Int = TypedValue.COMPLEX_UNIT_DIP): Float {
         val metrics = DisplayMetrics()
-        display.getMetrics(metrics)
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, value, metrics)
+        val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        wm.defaultDisplay.getMetrics(metrics)
+        return TypedValue.applyDimension(unit, value, metrics)
     }
 }
