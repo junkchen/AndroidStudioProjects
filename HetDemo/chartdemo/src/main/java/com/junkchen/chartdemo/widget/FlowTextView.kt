@@ -22,7 +22,7 @@ class FlowTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context) : this(context, null)
 
-    private val TAG = FlowTextView::class.qualifiedName
+    private val TAG = FlowTextView::class.java.canonicalName
 
     private val textPaint = Paint().apply {
         style = Paint.Style.FILL
@@ -55,11 +55,7 @@ class FlowTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
      * 行文本高度
      */
     @Dimension(unit = Dimension.DP)
-    var rowTextHeight: Float = convertValue2Px(48f)
-        set(value) {
-            field = convertValue2Px(value)
-            postInvalidate()
-        }
+    var rowTextHeight: Float = 48F
 
     /**
      * 两个文本之间的间距
@@ -83,8 +79,8 @@ class FlowTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
                 textColor = getColor(R.styleable.FlowTextView_textColor, Color.BLACK)
                 dividerSize = getDimension(R.styleable.FlowTextView_dividerSize, 1F)
                 dividerColor = getColor(R.styleable.FlowTextView_dividerColor, Color.GRAY)
-                rowTextHeight = getDimension(R.styleable.FlowTextView_rowTextHeight, convertValue2Px(48F))
-                textInterval = getDimension(R.styleable.FlowTextView_textInterval, 16F)
+                rowTextHeight = getDimension(R.styleable.FlowTextView_rowTextHeight, 48F)
+                textInterval = getDimension(R.styleable.FlowTextView_textInterval, 18F)
             } finally {
                 recycle()
             }
@@ -162,10 +158,9 @@ class FlowTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
         }
     }
 
-    private fun convertValue2Px(value: Float, unit: Int = TypedValue.COMPLEX_UNIT_DIP): Float {
+    private fun convertSp2Px(value: Float): Float {
         val metrics = DisplayMetrics()
-        val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        wm.defaultDisplay.getMetrics(metrics)
-        return TypedValue.applyDimension(unit, value, metrics)
+        display.getMetrics(metrics)
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, value, metrics)
     }
 }
