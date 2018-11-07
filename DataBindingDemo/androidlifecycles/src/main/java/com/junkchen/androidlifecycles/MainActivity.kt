@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.junkchen.androidlifecycles.step1.Chrono1Activity
 import com.junkchen.androidlifecycles.step2.Chrono2Activity
+import com.junkchen.androidlifecycles.step3.Chrono3Activity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         btn_step2.setOnClickListener {
             startActivity(Intent(this, Chrono2Activity::class.java))
+        }
+
+        btn_step3.setOnClickListener {
+            startActivity(Intent(this, Chrono3Activity::class.java))
         }
     }
 }
