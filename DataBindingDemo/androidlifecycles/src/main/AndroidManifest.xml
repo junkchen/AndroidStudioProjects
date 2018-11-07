@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".step4.LocationActivity"></activity>
+        <activity android:name=".step5.ShareViewModelActivity" />
+        <activity android:name=".step4.LocationActivity" />
         <activity android:name=".step3.Chrono3Activity" />
         <activity android:name=".step2.Chrono2Activity" />
         <activity android:name=".step1.Chrono1Activity" />
