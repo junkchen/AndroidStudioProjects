@@ -1,1 +1,1 @@
-include ':app', ':coordinatorlayoutdemo', ':ipdemo', ':dialogdemo', ':chartdemo'
+include ':app', ':coordinatorlayoutdemo', ':ipdemo', ':dialogdemo', ':chartdemo', ':mpandroidchartdemo'
