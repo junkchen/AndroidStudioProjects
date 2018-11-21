@@ -11,6 +11,8 @@
     <com.journeyapps.barcodescanner.ViewfinderView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:zxing_viewfinder_mask="#7F000000"
+        app:zxing_viewfinder_laser="#0CB793"
         android:id="@+id/zxing_viewfinder_view"/>
 
     <TextView android:id="@+id/zxing_status_view"
