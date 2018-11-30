@@ -42,4 +42,5 @@ ext {
 
     // Third library
     mpandroidchartVersion = 'v3.1.0-alpha'
+    swipeRecyclerviewVersion = '1.1.4'
 }
