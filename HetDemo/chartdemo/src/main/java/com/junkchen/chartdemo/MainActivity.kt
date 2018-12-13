@@ -1,11 +1,11 @@
 package com.junkchen.chartdemo
 
 import android.graphics.Color
+import android.graphics.DashPathEffect
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import com.junkchen.chartdemo.widget.BarChart
-import com.junkchen.chartdemo.widget.LineData
-import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
 //        setContentView(WaterPieChart(this))
+//        setContentView(CanvasDemo2(this))
         showBarChart()
 
 //        line_chart.lineColor = Color.MAGENTA
@@ -45,13 +46,29 @@ class MainActivity : AppCompatActivity() {
 
     private fun showBarChart() {
         val barChart = BarChart(this).apply {
-            setPadding(4, 0, 4, 0)
-            val data = arrayListOf<BarChart.BarDataItem<String>>()
+            setPadding(16, 8, 16, 8)
+            val data = arrayListOf<BarChart.BarDataItem>()
             val random = Random()
-            for (i in 0..9) {
-                data.add(BarChart.BarDataItem(1.0, random.nextDouble() * 1000, "#$i"))
+            for (i in 0..7) {
+                val yValue = random.nextFloat() * 1000
+                data.add(BarChart.BarDataItem(i.toFloat(), yValue, "#$i", yValue = yValue.toInt().toString()))
             }
+            data.add(BarChart.BarDataItem(8f, 8f, "#8"))
+            data.add(BarChart.BarDataItem(9f, 4f, "#9"))
+            data.add(BarChart.BarDataItem(10f, 18f, "#10"))
+            data.add(BarChart.BarDataItem(11f, 1000f, "#11"))
+            this.visibleBarSize = 7.5f
+            this.highlightIndex = data.size - 1
+//            this.highlightEnabled = false
+            this.limitLines.add(BarChart.LimitLine(300f, lineColor = Color.YELLOW))
+            this.limitLines.add(BarChart.LimitLine(800f, "800优秀",
+                    pathEffect = DashPathEffect(floatArrayOf(16f, 8f), 8f)))
             this.barDataSet = data
+            this.setOnBarItemClickedListener(object : BarChart.OnBarItemClickedListener {
+                override fun onBarItemClicked(position: Int, barDataItem: BarChart.BarDataItem) {
+                    Snackbar.make(this@apply, "index: $position, y: ${barDataItem.y}", Snackbar.LENGTH_SHORT).show()
+                }
+            })
         }
         setContentView(barChart)
     }
