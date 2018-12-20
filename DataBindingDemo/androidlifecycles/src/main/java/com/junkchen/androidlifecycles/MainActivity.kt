@@ -1,7 +1,7 @@
 package com.junkchen.androidlifecycles
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.junkchen.androidlifecycles.step1.Chrono1Activity
 import com.junkchen.androidlifecycles.step2.Chrono2Activity

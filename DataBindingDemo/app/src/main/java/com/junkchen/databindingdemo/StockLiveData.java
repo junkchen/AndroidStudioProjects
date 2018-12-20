@@ -1,6 +1,6 @@
 package com.junkchen.databindingdemo;
 
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.LiveData;
 import android.icu.math.BigDecimal;
 
 public class StockLiveData extends LiveData<BigDecimal> {

@@ -1,9 +1,9 @@
 package com.junkchen.androidlifecycles.step2
 
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.os.SystemClock
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.junkchen.androidlifecycles.R
 import kotlinx.android.synthetic.main.activity_chrono.*
 

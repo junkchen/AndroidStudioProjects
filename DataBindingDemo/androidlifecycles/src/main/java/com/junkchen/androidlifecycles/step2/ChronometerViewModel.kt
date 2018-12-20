@@ -1,6 +1,6 @@
 package com.junkchen.androidlifecycles.step2
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 
 class ChronometerViewModel : ViewModel() {
     var startTime: Long? = null

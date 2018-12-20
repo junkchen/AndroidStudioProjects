@@ -1,9 +1,9 @@
 package com.junkchen.databindingdemo.mvvm.ui.myviewmodel
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +12,7 @@ import com.junkchen.databindingdemo.entity.User
 import kotlinx.android.synthetic.main.my_view_model_fragment.*
 import java.lang.StringBuilder
 
-class MyViewModelFragment : Fragment() {
+class MyViewModelFragment : androidx.fragment.app.Fragment() {
 
     companion object {
         fun newInstance() = MyViewModelFragment()

@@ -1,7 +1,7 @@
 package com.junkchen.databindingdemo.mvvm
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.junkchen.databindingdemo.R
 import com.junkchen.databindingdemo.mvvm.ui.myviewmodel.MyViewModelFragment
 

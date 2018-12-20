@@ -1,1 +1,1 @@
-include ':app', ':androidlifecycles'
+include ':app', ':androidlifecycles', ':doubanmovie'
