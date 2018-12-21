@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ChartDemo</string>
+    <string name="title_activity_bar_chart_test">BarChartTestActivity</string>
 </resources>

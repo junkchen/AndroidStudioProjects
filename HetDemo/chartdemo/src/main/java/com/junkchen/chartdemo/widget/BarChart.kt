@@ -10,6 +10,7 @@ import android.util.TypedValue
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Scroller
 
 /**
  * 柱状图
@@ -37,6 +38,7 @@ class BarChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : View
                     var pathEffect: PathEffect? = null)
 
     private val displayMetrics = DisplayMetrics()
+    private lateinit var scroller: Scroller
     private var onBarItemClickedListener: OnBarItemClickedListener? = null
 
     var yMax = 0f
@@ -80,10 +82,6 @@ class BarChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : View
      * x 坐标轴高度
      */
     var xAxisHeight = 16f
-        set(value) {
-            field = value
-            postInvalidate()
-        }
 
     /**
      * x 坐标轴文字大小
@@ -94,10 +92,16 @@ class BarChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : View
             postInvalidate()
         }
 
-    var barColor = Color.parseColor("#ff3d00")
+    var xAxisTextColor = Color.BLACK
+    var barColor = Color.parseColor("#7fff3d00")
     var barValueColor = Color.parseColor("#424242")
     var barBoundBgColor = Color.parseColor("#9e9e9e")
     var xAxisBoundBgColor = Color.parseColor("#bdbdbd")
+    /**
+     * 高亮显示
+     */
+    var highlightBarColor: Int = Color.parseColor("#ff3d00")
+    var highlightTextColor: Int = Color.parseColor("#ff3d00")
 
     /**
      * limit 线文字大小
@@ -139,12 +143,6 @@ class BarChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : View
         }
 
     /**
-     * 高亮显示
-     */
-    var highlightBarColor: Int = Color.parseColor("#c30000")
-    var highlightTextColor: Int = Color.parseColor("#c30000")
-
-    /**
      * 屏幕宽度可见的 bar 数量，0表示自适应显示所有数据
      */
     var visibleBarSize = 0f
@@ -179,6 +177,7 @@ class BarChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : View
     private var lastMoveX = 0f
 
     init {
+        scroller = Scroller(context)
         setLayerType(View.LAYER_TYPE_SOFTWARE, null)
     }
 
@@ -274,7 +273,7 @@ class BarChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : View
             val fm = textPaint.fontMetrics
             yMax = 0f
             val yPos = xAxisBound.centerY() + (fm.bottom - fm.top) / 2 - fm.bottom
-            textPaint.color = Color.BLACK
+            textPaint.color = xAxisTextColor
             textPaint.textAlign = Paint.Align.CENTER
             barDataSet.forEachIndexed { index, dataItem ->
                 if (!highlightEnabled || index != highlightIndex) {
@@ -312,18 +311,15 @@ class BarChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : View
                         left = barItemWidth * index + space
                         top = barBound.bottom - yValue / yMax * barBound.height()
                         right = barItemWidth * (index + 1) - space
-                        bottom = barBound.bottom.toFloat()
+                        bottom = barBound.bottom.toFloat() + ryPx
                     }
-                    rect.set(roundRect)
-                    rect.top = if (roundRect.height() <= ryPx * 2) {
-                        roundRect.bottom - roundRect.height() / 2
-                    } else {
-                        roundRect.bottom - ryPx
-                    }
+                    rect.set(roundRect.left, roundRect.top, roundRect.right, roundRect.bottom - ryPx)
+                    this.save()
+                    this.clipRect(rect)
                     this.drawRoundRect(roundRect, rxPx, ryPx, barPaint)
-                    this.drawRect(rect, barPaint)
+                    this.restore()
                     if (drawBarValueEnabled) {
-                        this.drawText(barDataItem.yValue, roundRect.centerX(), roundRect.top - 4, textPaint)
+                        this.drawText(barDataItem.yValue, roundRect.centerX(), roundRect.top - 8, textPaint)
                     }
                 }
             }
@@ -338,19 +334,16 @@ class BarChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : View
                     left = barItemWidth * highlightIndex + space
                     top = barBound.bottom - yValue / yMax * barBound.height()
                     right = barItemWidth * (highlightIndex + 1) - space
-                    bottom = barBound.bottom.toFloat()
+                    bottom = barBound.bottom.toFloat() + ryPx
                 }
-                rect.set(roundRect)
-                rect.top = if (roundRect.height() <= ryPx * 2) {
-                    roundRect.bottom - roundRect.height() / 2
-                } else {
-                    roundRect.bottom - ryPx
-                }
+                rect.set(roundRect.left, roundRect.top, roundRect.right, roundRect.bottom - ryPx)
                 barPaint.color = highlightBarColor
+                this.save()
+                this.clipRect(rect)
                 this.drawRoundRect(roundRect, rxPx, ryPx, barPaint)
-                this.drawRect(rect, barPaint)
+                this.restore()
                 if (drawBarValueEnabled) {
-                    this.drawText(highlightBar.yValue, roundRect.centerX(), roundRect.top - 4, textPaint)
+                    this.drawText(highlightBar.yValue, roundRect.centerX(), roundRect.top - 8, textPaint)
                 }
 
                 // x axis text
@@ -387,6 +380,7 @@ class BarChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : View
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent?): Boolean {
+        super.onTouchEvent(event)
         Log.i(TAG, "onTouchEvent: ")
         if (barDataSet.isEmpty()) return super.onTouchEvent(event)
         return gestureDetector.onTouchEvent(event)
@@ -458,13 +452,15 @@ class BarChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : View
 
         override fun onFling(e1: MotionEvent?, e2: MotionEvent?, velocityX: Float, velocityY: Float): Boolean {
             Log.i(TAG, "onFling: ")
-//            e2?.let {
-//                moveX = it.x - lastTouchX
-//                lastTouchX = it.x
-//            }
-//            postInvalidate()
-//            return true
-            return super.onFling(e1, e2, velocityX, velocityY)
+            scroller.startScroll(0, 0, 60, 0, 600)
+            return true
+        }
+    }
+
+    override fun computeScroll() {
+        if (scroller.computeScrollOffset()) {
+//            scrollTo(scroller.currX, scroller.currY)
+            postInvalidate()
         }
     }
 

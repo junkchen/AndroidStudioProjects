@@ -4,48 +4,26 @@ import android.graphics.Color
 import android.graphics.DashPathEffect
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
+import android.support.v7.app.AppCompatActivity;
 import com.junkchen.chartdemo.widget.BarChart
+
+import kotlinx.android.synthetic.main.activity_bar_chart_test.*
+import kotlinx.android.synthetic.main.content_bar_chart_test.*
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
-    companion object {
-        const val TAG: String = "MainActivity"
-    }
+class BarChartTestActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-//        setContentView(WaterPieChart(this))
-//        setContentView(CanvasDemo2(this))
-//        showBarChart()
+        setContentView(R.layout.activity_bar_chart_test)
+        setSupportActionBar(toolbar)
 
-//        line_chart.lineColor = Color.MAGENTA
-//        line_chart.axisValueColor = Color.DKGRAY
-//        line_chart.highlighterBackgroundColor = Color.MAGENTA
-//
-//        val dataSet = ArrayList<LineData<String>>()
-//        val random = Random()
-//        dataSet.add(LineData(420F, (random.nextInt(1000) + 200).toFloat(),
-//                "10/10 7:00"))
-//        dataSet.add(LineData(500F, (random.nextInt(1000) + 200).toFloat(),
-//                "10/10 8:20"))
-//        dataSet.add(LineData(600F, (random.nextInt(1000) + 200).toFloat(),
-//                "10/10 10:00"))
-//        dataSet.add(LineData(870F, (random.nextInt(1000) + 200).toFloat(),
-//                "10/10 14:30"))
-//        dataSet.add(LineData(1110F, (random.nextInt(1000) + 200).toFloat(),
-//                "10/10 18:30"))
-////        line_chart.lineDataSet = dataSet
-//
-//        // FlowTextView
-//        flowTextView.textList = arrayListOf("Google", "Kotlin", "Android", "IOS", "Python", "Apple",
-//                "Google", "Kotlin", "Android", "IOS", "Python", "Apple", "IOS", "Python", "Apple")
-//        flowTextView.rowTextHeight = 96f
-    }
+        fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+        }
 
-    private fun showBarChart() {
-        val barChart = BarChart(this).apply {
+        barChart.apply {
             setPadding(16, 8, 16, 8)
             val data = arrayListOf<BarChart.BarDataItem>()
             val random = Random()
@@ -70,7 +48,6 @@ class MainActivity : AppCompatActivity() {
                 }
             })
         }
-        setContentView(barChart)
     }
 
 }
