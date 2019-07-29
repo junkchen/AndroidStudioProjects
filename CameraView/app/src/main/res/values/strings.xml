@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CameraView</string>
+
+    <string name="request_permission">This sample needs camera permission.\n这个演示程序需要相机权限。</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
